@@ -52,3 +52,37 @@ svgStates.forEach(function(el) {
   });
 });
 
+var createBtn = function(state){
+  //add in function to createn button for each item
+};
+
+var saveData = function(state){
+  var stateSearch = JSON.parse(localStorage.getItem("stateSearch")) || []
+  var stateUpper = state.toUpperCase();
+
+  if(stateSearch === 0){
+    stateSearch.push(stateUpper);
+    createBtn(stateUpper)
+  } else if (!stateSearch.includes(stateUpper)){
+    stateSearch.push(stateUpper);
+    createBtn(stateUpper);
+  }
+
+  window.localStorage.setItem("stateSearch", JSON.stringify(stateSearch));
+};
+
+var loadData = function(){
+  var state = JSON.parse(localStorage.getItem("stateSearch"));
+
+  $.each(state, function(list, item){
+    createBtn(item);
+  })
+};
+
+//add in the id selector for the save button
+$().on("click", function(){
+  //redirect to the next page and pass in the value of the button
+})
+
+
+
