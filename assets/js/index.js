@@ -84,5 +84,7 @@ $().on("click", function(){
   //redirect to the next page and pass in the value of the button
 })
 
+//modal
+
 
 

@@ -1,25 +1,46 @@
 var stateID = [
     {   name: "ALASKA",
+        capital: "",
         ID: "AK"
     },
     {
         name: "ALABAMA",
+        capital: "",
         ID: "AL"
     },
-    //CONTINUE FOR ALL 52 STATE
+    {
+        name: "ARIZONA",
+        capital: "",
+        ID: "AZ"
+    },
+    {
+        name: "ARKANSAS",
+        capital: "",
+        ID: "AR"
+    },
+    {
+        name: "CALIFORNIA",
+        capital: "",
+        ID: "CA"
+    },
+    {
+        name: "COLORADO",
+        capital: "",
+        ID: "CO"
+    },
+    {
+
+    },
+
 ]
 
-var displayStateDataCovid = function(confirmed, death, infectionRate, population, transmissionLevel){
+var displayStateDataCovid = function(confirmed, death, infectionRate, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
     //display the data by appending it
 }
 
 var displayWeatherData = function(state, time, temp, wind_speed, humidity, UVI, weather_icon){
     //display weather for 5 days depend on how we to display it
     //converting time from binary to UTC
-    var dateObj = new Date(time * 1000).toLocaleString();
-    var convertedDate = dateObj.slice(0,8);
-
-    //weather degree sign = "\u00B0F"
 }
 
 
@@ -30,9 +51,6 @@ var getCityWeather = function(state,lat,lon){
         if (response.ok){
             response.json().then(function(data){
                 console.log(data);
-                for(var i = 0; i < 5; i++){
-                    displayWeatherData(state, data.daily[i].dt, data.daily[i].temp.day, data.daily[i].humidity, data.daily[i].wind_speed, data,daily[i].uvi, data.daily[i].weather[0].icon, data.daily[i].weather[0].description)
-                }
             })
         }
     })
@@ -45,7 +63,6 @@ var getCityInfo = function(state){
     var response = fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
-                getWeather(state, data.coord.lon, data.coord.lat);
             })
         } else {
             console.log("error: please enter a valid city name");
@@ -67,6 +84,8 @@ var getCovidInfo = function(){
         }
     })
 }
+
+//start function
 
 
 
