@@ -22,13 +22,18 @@ svg {
   column-gap: 8px;
   list-style: none;
 }
+
 .list-of-states li {
   padding: 2px 4px;
   display: inline-block;
   width: 100%;
 }
+
 .list-of-states li.on {
   background: red;
   color: white;
   font-weight: bold;
 }
+
+/* override bulma to add any additional styling */
+/* minimum viable product*/
