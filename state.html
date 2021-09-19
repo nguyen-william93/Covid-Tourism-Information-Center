@@ -9,6 +9,44 @@
     <title>State Information</title>
 </head>
 <body>
+
+    <header>
+        <!--State title goes here-->
+        <h1 class="hero is-danger">
+          <div class="hero-body">
+            <p class="title">
+                State of <span id = 'state-selected'></span>
+            </p>
+            <p class="subtitle">
+              Weather and COVID statistics for this state.<br>
+              <a class="button is-black mt-4" href = "index.html">Return to Homepage</a>
+
+            </p>
+          </div>
+        </h1>
+      </header>
+
+<main> 
+    
+    <div class="columns">
+        <div class="column mx-4">
+          COVID Data for State of <span id = "state-name"></span>
+        </div>
+        <div class="column mx-4">
+          Weather Data for the Capital of <span id = "state-name"></span>
+        </div>
+      </div>
+    <!--dynamically generated elements-->
+      <!--want container with 2 columns, column 1 COVID, column 2 Weather for capital city-->
+
+</main>
+     
+
+
+      <footer class = "hero is-danger">
+        <!--footer is optional-->
+        <p class= "subtitle"> <a href = "index.html">Return to Homepage</p>
+      </footer>
     
 </body>
 </html>
