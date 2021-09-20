@@ -18,6 +18,7 @@ function addOnFromList(el) {
 }
 
 function addOnFromState(el) {
+  var path = document.querySelector(".state");
   var stateId = el.getAttribute("id");
   var wordState = document.querySelector("[data-state='" + stateId + "']");
   el.classList.add("on");
@@ -36,6 +37,14 @@ wordStates.forEach(function(el) {
     removeAllOn();
     addOnFromList(el);
   });
+  
+  el.addEventListener("click", function(){
+    var ID = el.getAttribute("data-state");
+    window.location.href = "./state.html?state=" + ID;
+    saveData(ID);
+  })
+
+
 });
 
 svgStates.forEach(function(el) {
@@ -50,6 +59,15 @@ svgStates.forEach(function(el) {
     removeAllOn();
     addOnFromState(el);
   });
+
+  el.addEventListener("click", function(){
+    console.log(el.getAttribute);
+    var ID = el.getAttribute("id");
+    window.location.href = "./state.html?state=" + ID;
+    saveData(el.getAttribute("id"));
+  })
+
+  
 });
 
 var createBtn = function(state){
@@ -76,6 +94,7 @@ var loadData = function(){
 
   $.each(state, function(list, item){
     createBtn(item);
+    console.log(item);
   })
 };
 
@@ -84,7 +103,7 @@ $().on("click", function(){
   //redirect to the next page and pass in the value of the button
 })
 
-//modal
+loadData();
 
 
 
