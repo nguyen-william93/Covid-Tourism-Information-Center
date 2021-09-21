@@ -222,7 +222,7 @@ var stateID = [
 var getStateID = function(){
     var queryString = document.location.search;
     var state = decodeURI(queryString).split("=")[1];
-    console.log(state);
+    return state;
 }
 
 var displayStateDataCovid = function(confirmed, death, infectionRate, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
