@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link to bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>State Information</title>
-</head>
-<body>
-
-    <header>
+  </head>
+  <body>
+      <header>
         <!--State title goes here-->
         <h1 class="hero is-danger">
           <div class="hero-body">
@@ -20,33 +19,30 @@
             <p class="subtitle">
               Weather and COVID statistics for this state.<br>
               <a class="button is-black mt-4" href = "index.html">Return to Homepage</a>
-
             </p>
           </div>
         </h1>
       </header>
 
-<main> 
-    
-    <div class="columns">
-        <div class="column mx-4">
-          COVID Data for State of <span id = "state-name"></span>
-        </div>
-        <div class="column mx-4">
-          Weather Data for the Capital of <span id = "state-name"></span>
-        </div>
-      </div>
-    <!--dynamically generated elements-->
-      <!--want container with 2 columns, column 1 COVID, column 2 Weather for capital city-->
-
-</main>
+      <main> 
+          <div class="columns">
+              <div class="column mx-4">
+                COVID Data for State of <span id = "state-name"></span>
+              </div>
+              <div class="column mx-4">
+                 Weather Data for the Capital of <span id = "state-name"></span>
+              </div>
+          </div>
+          <!--dynamically generated elements-->
+          <!--want container with 2 columns, column 1 COVID, column 2 Weather for capital city-->
+      </main>
      
-
-
       <footer class = "hero is-danger">
         <!--footer is optional-->
         <p class= "subtitle"> <a href = "index.html">Return to Homepage</p>
       </footer>
+      <script src = "./assets/js/state.js"></script>
     
-</body>
+    
+  </body>
 </html>
