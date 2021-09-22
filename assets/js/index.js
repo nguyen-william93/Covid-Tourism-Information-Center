@@ -94,8 +94,15 @@ svgStates.forEach(function (el) {
   });
 });
 
-var createBtn = function (state) {
-  //add in function to createn button for each item
+var createBtn = function(state){
+  //add in function to create n button for each item
+  var buttonEl = document.createElement("button");
+  buttonEl.textContent =state;
+  buttonEl.classList.add("is-danger");
+
+  var searchContainerEl = document.querySelector("#search-container");
+  searchContainerEl.appendChild(buttonEl);
+  buttonEl.setAttribute("id", "submit");
 };
 
 var saveData = function (state) {
