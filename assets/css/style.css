@@ -37,3 +37,9 @@ svg {
 
 /* override bulma to add any additional styling */
 /* minimum viable product*/
+
+#submit {
+  width: 40%;
+  margin: 2px;
+    
+}
