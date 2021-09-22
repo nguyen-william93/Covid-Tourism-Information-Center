@@ -101,8 +101,8 @@ var createBtn = function(state){
   buttonEl.classList.add("is-danger");
 
   var searchContainerEl = document.querySelector("#search-container");
-  searchContainerEl.appendChild(buttonEl);
   buttonEl.setAttribute("id", "submit");
+  searchContainerEl.appendChild(buttonEl);
 };
 
 var saveData = function (state) {
@@ -125,7 +125,7 @@ var loadData = function () {
 
   $.each(state, function (list, item) {
     createBtn(item);
-    console.log(item);
+    //console.log(item);
   });
 };
 
