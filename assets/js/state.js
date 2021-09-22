@@ -1,41 +1,41 @@
 var stateID = [
     {   name: "ALASKA",
-        capital: "",
+        capital: "Juneau",
         ID: "AK"
     },
     {
         name: "ALABAMA",
-        capital: "",
+        capital: "Montgomery",
         ID: "AL"
     },
     {
         name: "ARIZONA",
-        capital: "",
+        capital: "Phoenix",
         ID: "AZ"
     },
     {
         name: "ARKANSAS",
-        capital: "",
+        capital: "Little Rock",
         ID: "AR"
     },
     {
         name: "CALIFORNIA",
-        capital: "",
+        capital: "Sacramento",
         ID: "CA"
     },
     {
         name: "COLORADO",
-        capital: "",
+        capital: "Denver",
         ID: "CO"
     },
     {
         name: "CONNECTICUT",
-        captial: "",
+        captial: "Hartford",
         ID: "CT"
     },
     {
         name: "DELAWARE",
-        capital: "",
+        capital: "Dover",
         ID: "DE"
     },
     {
@@ -45,176 +45,208 @@ var stateID = [
     },
     {
         name: "FLORIDA",
-        capital: "",
+        capital: "Tallahassee",
         ID: "FL"
     },
     {
         name: "GEORGIA",
-        capital: "",
+        capital: "Atlanta",
         ID: "GA"
     },
     {
         name: "HAWAII",
-        capital: "",
+        capital: "Honolulu",
         ID: "HI"
     },
     {
         name: "IDAHO",
-        capital: "",
+        capital: "Boise",
         ID: "ID"
     },
     {
         name: "ILLINOIS",
-        capital: "",
+        capital: "Springfield",
         ID: "IL"
     },
     {
         name: "INDIANA",
-        captial: "",
+        captial: "Indianapolis",
         ID: "IN"
     },
     {
         name: "IOWA",
-        capital: "",
+        capital: "Des Moines",
         ID: "IA"
     },
     {
         name: "KANSAS",
-        capital: "",
+        capital: "Topeka",
         ID: "KS"
     },
     {
         name: "LOUISIANA",
-        capital: "",
+        capital: "Baton Rouge",
         ID: "LA"
     },
     {
         name: "MAINE",
-        capital: "",
+        capital: "Augusta",
         ID: "ME"
     },
     {
         name: "MARYLAND",
-        captial: "",
+        captial: "Annapolis",
         ID: "MD"
     },
     {
         name: "MASSACHUSETTS",
-        captial: "",
+        captial: "Boston",
         ID: "MA"
     },
     {
         name: "MICHIGAN",
-        captial: "",
+        captial: "Lansing",
         ID: "MI"
     },
     {
         name: "MINNESOTA",
-        captial: "",
+        captial: "St. Paul",
         ID: "MN"
     },
     {
-        name: " MISSISSIPPI",
-        captial: "",
+        name: "MISSISSIPPI",
+        captial: "Jackson",
         ID: "MS"
     },
     {
         name: "MISSOURI",
-        capital: "",
+        capital: "Jefferson City",
         ID: "MO"
     },
     {
         name: "MONTANA",
-        captial: "",
+        capital: "Helena",
         ID: "MT"
     },
     {
         name: "NEBRASKA",
-        capital: "",
+        capital: "Lincoln",
         ID: "NE"
     },
     {
         name: "NEVADA",
-        capital: "",
+        capital: "Carson City",
         ID: "NV"
     },
     {
         name: "NEW HAMPSHIRE",
-        capital: "",
+        capital: "Concord",
         ID: "NH"
     },
     {
         name: "NEW JERSEY",
-        capital: "",
+        capital: "Trenton",
         ID: "NJ"
     },
     {
         name: "NEW YORK",
-        capital: "",
+        capital: "Albany",
         ID: "NY"
     },
     {
         name: "NEW MEXICO",
-        captial: "",
+        captial: "Santa Fe",
         ID: "NM"
     },
     {
-        name: "NORTH CORLINA",
-        capital: "",
+        name: "NORTH CAROLINA",
+        capital: "Raleigh",
         ID: "NC"
     },
     {
         name: "NORTH DAKOTA",
-        capital: "",
+        capital: "Bismarck",
         ID: "ND"
     },
     {
         name: "OHIO",
+        capital: "Columbus",
+        ID: "OH"
     },
     {
         name: "OKLAHOMA",
+        capital: "Oklahoma City",
+        ID: "OK"
     },
     {
         name: "OREGON",
+        capital: "Salem",
+        ID: "OR"
     },
     {
-        name: "PENNYSLVANIA"
+        name: "PENNYSLVANIA",
+        capital: "Harrisburg",
+        ID: "PA"
     },
     {
         name: "RHODE ISLAND",
+        capital: "Providence",
+        ID: "RI"
     },
     {
         name: "SOUTH CAROLINA",
+        capital: "Columbia",
+        ID: "SC"
     },
     {
         name: "SOUTH DAKOTA",
+        capital: "Pierre",
+        ID: "SD"
     },
     {
         name: "TENNESSEE",
+        capital: "Nashville",
+        ID: "TN"
     },
     {
         name: "TEXAS",
+        capital: "Austin",
+        ID: "TX"
     },
     {
         name: "UTAH",
+        capital: "Salt Lake City",
+        ID: "UT"
     },
     {
-        name: "VERMOT",
+        name: "VERMONT",
+        capital: "Montpelier",
+        ID: "VT"
     },
     {
         name: "VIRGINIA",
+        capital: "Richmond",
+        ID: "VA"
     },
     {
         name: "WASHINGTON",
+        capital: "Olympia",
+        ID: "WA"
     },
     {
         name: "WEST VIRGINIA",
+        capital: "Charleston",
+        ID: "WV"
     },
     {
         name: "WISCONSIN",
+        capital: "Madison",
+        ID: "WI"
     },
     {
         name: "WYOMING",
+        capital: "Cheyenne",
+        ID: "WY"
     }
 
 ]
