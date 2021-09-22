@@ -268,7 +268,7 @@ var getCovidInfo = function(){
         if (response.ok){
             response.json().then(function(data){
                 console.log(data);
-                displayStateDataCovid()//pass in the info we need
+                displayStateDataCovid()
                 getState();
             })
         } else {
