@@ -40,7 +40,7 @@ var stateID = [
     },
     {
         name: "DISTRICT OF COLUMBIA",
-        capital: "",
+        capital: "Washington D.C.",
         ID: "DC"
     },
     {

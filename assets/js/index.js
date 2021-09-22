@@ -74,7 +74,7 @@ var createBtn = function(state){
   //add in function to create n button for each item
   var buttonEl = document.createElement("button");
   buttonEl.textContent =state;
-  buttonEl.classList.add("is-danger");
+  buttonEl.classList.add("is-size-4");
 
   var searchContainerEl = document.querySelector("#search-container");
   searchContainerEl.appendChild(buttonEl);
