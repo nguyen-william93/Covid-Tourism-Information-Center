@@ -2,14 +2,18 @@
 The COVID Tourism Information Center displays travel necessary information such as Covid data and live weather forecast by using various front end technology and 3rd party APIs. 
 
 ## Built with: 
-HTML, &nbsp;&nbsp; CSS, &nbsp;&nbsp; JS, &nbsp;&nbsp; [Bulma](https://bulma.io/) &nbsp;&nbsp; [COVID Act Now API](https://apidocs.covidactnow.org/updates/)&nbsp;&nbsp; [OpenWeather API](https://openweathermap.org/api)&nbsp;&nbsp; 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)&nbsp;&nbsp; ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) &nbsp;&nbsp; ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)&nbsp;&nbsp;
+
+[Bulma](https://bulma.io/) &nbsp;&nbsp; [COVID Act Now API](https://apidocs.covidactnow.org/updates/)&nbsp;&nbsp; [OpenWeather API](https://openweathermap.org/api)&nbsp;&nbsp; 
 
 ## Preview:
-![image](https://media2.giphy.com/media/lNY0a9aJgFcCaDn1nw/giphy.gif?cid=ecf05e47d58yq6nlccv1htvddmzjtf02sljf0ret6s5ujen3&rid=giphy.gif&ct=g)
+![image](https://user-images.githubusercontent.com/86173119/134441790-60def2d8-11c8-4d72-9edc-ade7a51828d6.png)
+![image](https://user-images.githubusercontent.com/86173119/134441578-785e4e75-ccbf-4602-a7e7-aeb77cfee68a.png)
 
 
 
 ## User Criteria
+AS A user, I WANT to be able to view COVID data and weather for all states in one place SO THAT I can decide which state(s) I will travel to.
 - When I click a state, then I see the COVID data and live weather data for that state.
 - When I view the page then I also see past searches.
 - When I refresh the page, then I can see my prior searches.
@@ -32,7 +36,7 @@ HTML, &nbsp;&nbsp; CSS, &nbsp;&nbsp; JS, &nbsp;&nbsp; [Bulma](https://bulma.io/)
 ## Contributions
 
 [Angela Loftus](https://github.com/AngelaLoftus)&nbsp;&nbsp;
--
+- 
 -
 -
 
@@ -42,10 +46,10 @@ HTML, &nbsp;&nbsp; CSS, &nbsp;&nbsp; JS, &nbsp;&nbsp; [Bulma](https://bulma.io/)
 -
 
 [Isabel Ramirez](https://github.com/izztnkr)&nbsp;&nbsp;
--
--
--
+- error handling
+- weather api
+- read me documentation
 
 
 ## Link to deployed application
-https://PLACEHOLDER
+https://nguyen-william93.github.io/Covid-Tourism-Information-Center/
