@@ -130,8 +130,12 @@ var loadData = function () {
 };
 
 //add in the id selector for the save button
-$().on("click", function () {
+$("#search-container").on("click", "#submit", function (event) {
   //redirect to the next page and pass in the value of the button
+  var state = this.textContent;
+  console.log(state);
+
+  window.location.href = "./state.html?state=" + state;
 });
 
 loadData();
