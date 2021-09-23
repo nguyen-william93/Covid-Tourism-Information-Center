@@ -275,10 +275,12 @@ function inputCheck(event) {
         saveData(userInputEl.value);
         window.location.href =
           "./state.html?state=" + userInputEl.value.toUpperCase();
+        return;
       } else if (userInputEl.value.toUpperCase() === stateID[i].ID) {
         saveData(userInputEl.value);
         window.location.href =
           "./state.html?state=" + userInputEl.value.toUpperCase();
+        return;
       }
     }
   }

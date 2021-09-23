@@ -259,6 +259,7 @@ var getStateID = function(){
 
 var displayStateDataCovid = function(confirmed, death, infectionRate, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
     //display the data by appending it
+    console.log("YAY");
 }
 
 var displayWeatherData = function(state, time, temp, wind_speed, humidity, UVI, weather_icon){
@@ -295,13 +296,23 @@ var getCityInfo = function(state){
 
 var getCovidInfo = function(){
     var apiUrl = "https://api.covidactnow.org/v2/states.json?apiKey=6cace70212de4ea3b58aea0276c7232e"
-
+    var state = getStateID();
+    if (state.length > 2){
+        for (var i = 0; i < stateID.length; i++){
+            if (state === stateID[i].name){
+                state = stateID[i].ID;
+            }
+        }
+    }
     var response = fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
-                console.log(data);
-                displayStateDataCovid()
-                getState();
+                for (var i = 0; i < data.length; i++){
+                    if (data[i].state === state){
+                        displayStateDataCovid();
+                        console.log(state);
+                    }
+                }
             })
         } else {
             console.log("error");
@@ -310,7 +321,6 @@ var getCovidInfo = function(){
 }
 
 //start function
-getState();
 getCovidInfo();
 
 
