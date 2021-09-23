@@ -260,7 +260,7 @@ var getStateID = function(){
 var displayStateDataCovid = function(confirmed, death, vaccine, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
     //display the data by appending it
     var arrName = ["Total Population", "Confirmed Cases", "Death", "Percent of population vaccinated", "CDC Tranmission Level", "ICU bed"]
-    var arrData = [population, confirmed, death, vaccine, transmissionLevel, ICU_bed]
+    var arrData = [population, confirmed, death, vaccine * 100, transmissionLevel, ICU_bed]
     var covidEl = document.querySelector("#covid-container")
     for (var i = 0; i < arrName.length; i++){
         var pEl = document.createElement("p");
@@ -268,7 +268,6 @@ var displayStateDataCovid = function(confirmed, death, vaccine, population, tran
         pEl.classList.add("has-text-left");
         covidEl.appendChild(pEl);
     }
-    console.log(confirmed, death, vaccine, population, transmissionLevel, ICU_bed);
 }
 
 var displayWeatherData = function(state, time, temp, wind_speed, humidity, UVI, weather_icon){
