@@ -366,6 +366,14 @@ var createBtn = function (state) {
 var saveData = function (state) {
   var stateSearch = JSON.parse(localStorage.getItem("stateSearch")) || [];
   var stateUpper = state.toUpperCase();
+  if (stateUpper.length > 2){
+    for (var i = 0; i < stateID.length; i++){
+      if (stateUpper === stateID[i].name){
+        stateUpper = stateID[i].ID;
+      }
+    }
+  }
+  console.log(stateUpper.length)
 
   if (stateSearch === 0) {
     stateSearch.push(stateUpper);
@@ -383,6 +391,7 @@ var loadData = function () {
 
   $.each(state, function (list, item) {
     createBtn(item);
+    console.log(item.length);
     //console.log(item);
   });
 };
