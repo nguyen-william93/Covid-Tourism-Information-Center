@@ -1,4 +1,4 @@
-var stateID = [
+ var stateID = [
     {   name: "ALASKA",
         capital: "Juneau",
         ID: "AK"
