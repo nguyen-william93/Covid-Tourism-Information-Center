@@ -324,6 +324,12 @@ var getCovidInfo = function(){
     var stateEl = document.querySelector("#state-name");
     stateEl.textContent = stateName;
 
+    var titleEl = document.querySelector("#state-selected");
+    titleEl.textContent = stateName;
+
+    var capitalSubtitleEl =document.querySelector("#stateHasCapital");
+    capitalSubtitleEl.textContent= stateName;
+
     var response = fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
