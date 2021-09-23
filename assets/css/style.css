@@ -58,3 +58,7 @@ svg {
   background-color: maroon;
   color: white;
 }
+
+p{
+  padding-top: 10px;
+}

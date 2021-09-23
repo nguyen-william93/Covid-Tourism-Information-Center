@@ -257,9 +257,18 @@ var getStateID = function(){
     return state;
 }
 
-var displayStateDataCovid = function(confirmed, death, infectionRate, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
+var displayStateDataCovid = function(confirmed, death, vaccine, population, transmissionLevel, ICU_bed){ //pass in whatever we want to be display
     //display the data by appending it
-    console.log("YAY");
+    var arrName = ["Total Population", "Confirmed Cases", "Death", "Percent of population vaccinated", "CDC Tranmission Level", "ICU bed"]
+    var arrData = [population, confirmed, death, vaccine, transmissionLevel, ICU_bed]
+    var covidEl = document.querySelector("#covid-container")
+    for (var i = 0; i < arrName.length; i++){
+        var pEl = document.createElement("p");
+        pEl.textContent = arrName[i] + ": " + arrData[i];
+        pEl.classList.add("has-text-left");
+        covidEl.appendChild(pEl);
+    }
+    console.log(confirmed, death, vaccine, population, transmissionLevel, ICU_bed);
 }
 
 var displayWeatherData = function(state, time, temp, wind_speed, humidity, UVI, weather_icon){
@@ -296,21 +305,31 @@ var getCityInfo = function(state){
 
 var getCovidInfo = function(){
     var apiUrl = "https://api.covidactnow.org/v2/states.json?apiKey=6cace70212de4ea3b58aea0276c7232e"
-    var state = getStateID();
-    if (state.length > 2){
+    var stateId = getStateID();
+    if (stateId.length > 2){
         for (var i = 0; i < stateID.length; i++){
-            if (state === stateID[i].name){
-                state = stateID[i].ID;
+            if (stateId === stateID[i].name){
+                var stateName = stateId;
+                stateId = stateID[i].ID;
+            }
+        }
+    } 
+    if (stateId.length <= 2){
+        for (var i = 0; i < stateID.length; i++){
+            if (stateId === stateID[i].ID){
+                var stateName = stateID[i].name;
             }
         }
     }
+    var stateEl = document.querySelector("#state-name");
+    stateEl.textContent = stateName;
+
     var response = fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
                 for (var i = 0; i < data.length; i++){
-                    if (data[i].state === state){
-                        displayStateDataCovid();
-                        console.log(state);
+                    if (data[i].state === stateId){
+                        displayStateDataCovid(data[i].actuals.cases, data[i].actuals.deaths, data[i].metrics.vaccinationsCompletedRatio, data[i].population, data[i].cdcTransmissionLevel, data[i].actuals.icuBeds.capacity);
                     }
                 }
             })
