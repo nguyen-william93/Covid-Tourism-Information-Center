@@ -41,5 +41,13 @@ svg {
 #submit {
   width: 40%;
   margin: 2px;
-    
+  background-color: #f14668;
+  border-radius: 10px;
+  color: black;
+}
+
+#submit:hover{
+  box-shadow: 3px 3px black;
+  background-color: maroon;
+  color: white;
 }
