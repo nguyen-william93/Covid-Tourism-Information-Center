@@ -36,19 +36,19 @@ AS A user, I WANT to be able to view COVID data and weather for all states in on
 ## Contributions
 
 [Angela Loftus](https://github.com/AngelaLoftus)&nbsp;&nbsp;
+- Front end styling on index.html and state.html
+- Dynamically create buttons upon user search
+- Redirect user to state page on button click 
+
+[William Nguyen](https://github.com/nguyen-william93)&nbsp;&nbsp; 
 - 
 -
 -
 
-[William Nguyen](https://github.com/nguyen-william93)&nbsp;&nbsp; 
--
--
--
-
 [Isabel Ramirez](https://github.com/izztnkr)&nbsp;&nbsp;
-- error handling
-- weather api
-- read me documentation
+- Error handling
+- Weather API
+- Readme documentation
 
 
 ## Link to deployed application
