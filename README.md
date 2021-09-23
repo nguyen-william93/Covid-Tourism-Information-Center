@@ -41,9 +41,9 @@ AS A user, I WANT to be able to view COVID data and weather for all states in on
 - Redirect user to state page on button click 
 
 [William Nguyen](https://github.com/nguyen-william93)&nbsp;&nbsp; 
-- 
--
--
+- Back end, covid api 
+- Map functionality
+- display covid section
 
 [Isabel Ramirez](https://github.com/izztnkr)&nbsp;&nbsp;
 - Error handling
