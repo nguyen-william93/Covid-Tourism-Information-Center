@@ -300,21 +300,32 @@ var getStateCapital = function () {
   console.log(queryString);
   var state = decodeURI(queryString).split("=")[1];
   console.log(state);
+  var stateCapital = city;
+  console.log(stateCapital);
+
+  function renderStateCapital() {
+    var stateCapitalEl = document.createElement("p");
+    var stateCapital = city;
+    stateCapitalEl.textContent = "State Capital: " + stateCapital;
+    stateCapitalContainer.append(stateCapitalEl);
+  }
+
   //how to extract from array?
   for (var i = 0; i < stateID.length; i++) {
     if (state.toUpperCase() === stateID[i].ID) {
       city = stateID[i].capital;
       console.log(city);
+      renderStateCapital(city);
+    } else if (state.toUpperCase() === stateID[i].name) {
+      city = stateID[i].capital;
+      console.log(city);
+      renderStateCapital(city);
     }
   }
   console.log(city);
   var stateCapital = city;
   console.log(stateCapital);
   //this right here below is not working//
-
-  var stateCapitalEl = document.createElement("p");
-  stateCapitalEl.textContent = "State Capital: " + stateCapital;
-  stateCapitalContainer.append(stateCapitalEl);
 
   function getWeatherData(event) {
     var query =
