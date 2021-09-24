@@ -389,6 +389,24 @@ var getCityWeather = function (state, lat, lon) {
   });
 };
 
+//pass in state from the front page
+// var getWeatherInfo = function (state) {
+//   var city = "Austin";
+//   var apiUrl =
+//     "https://api.openweathermap.org/data/2.5/weather?q=" +
+//     city +
+//     "&appid=9698d78e4b0b91d10c1cae15ee7197eb";
+
+//   var response = fetch(apiUrl).then(function (response) {
+//     if (response.ok) {
+//       response.json().then(function (data) {});
+//       console.log(data);
+//     } else {
+//       console.log("error: please enter a valid city name");
+//     }
+//   });
+// };
+
 function getWeatherData(event) {
   var query =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -469,23 +487,6 @@ var getCovidInfo = function () {
             );
           }
         }
-      });
-    } else {
-      console.log("error");
-    }
-  });
-};
-
-var getCovidInfo = function () {
-  var apiUrl =
-    "https://api.covidactnow.org/v2/states.json?apiKey=6cace70212de4ea3b58aea0276c7232e";
-
-  var response = fetch(apiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        console.log(data);
-        displayStateDataCovid();
-        getState();
       });
     } else {
       console.log("error");
