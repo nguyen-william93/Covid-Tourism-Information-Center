@@ -7,8 +7,8 @@ The COVID Tourism Information Center displays travel necessary information such 
 [Bulma](https://bulma.io/) &nbsp;&nbsp; [COVID Act Now API](https://apidocs.covidactnow.org/updates/)&nbsp;&nbsp; [OpenWeather API](https://openweathermap.org/api)&nbsp;&nbsp; 
 
 ## Preview:
-![image](https://user-images.githubusercontent.com/86173119/134441790-60def2d8-11c8-4d72-9edc-ade7a51828d6.png)
-![image](https://user-images.githubusercontent.com/86173119/134441578-785e4e75-ccbf-4602-a7e7-aeb77cfee68a.png)
+![image](https://user-images.githubusercontent.com/86173119/134746511-e5c36a2a-b3aa-4f83-b5fa-9ec5e4f02f65.png)
+![image](https://user-images.githubusercontent.com/86173119/134746571-6c6ffe86-3316-4d0b-bce6-6ceb6a0769bb.png)
 
 
 
@@ -46,8 +46,8 @@ AS A user, I WANT to be able to view COVID data and weather for all states in on
 - display covid section
 
 [Isabel Ramirez](https://github.com/izztnkr)&nbsp;&nbsp;
-- Error handling
-- Weather API
+- Error handling functionality & design
+- Weather API integration and rendering
 - Readme documentation
 
 
