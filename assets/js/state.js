@@ -249,6 +249,30 @@ var stateID = [
 
 var weatherApiKey = "a1cef5ec8d14ee25ac975bd19e5efc49";
 var currentWeatherContainer = document.getElementById("weather-container");
+var stateCapitalContainer = document.querySelector("#thisStateCapital");
+var renderWeatherData = function (data) {
+  var current = data.current;
+  var temperature = current.temp;
+  var humidity = current.humidity;
+  var windspeed = current.wind_speed;
+  var uvindex = current.uvi;
+
+  var temperatureEl = document.createElement("p");
+  temperatureEl.textContent = temperature;
+  currentWeatherContainer.append(temperatureEl);
+
+  var humidityEl = document.createElement("p");
+  humidityEl.textContent = humidity;
+  currentWeatherContainer.append(humidityEl);
+
+  var windspeedEl = document.createElement("p");
+  windspeedEl.textContent = windspeed;
+  currentWeatherContainer.append(windspeedEl);
+
+  var uvindexEl = document.createElement("p");
+  uvindexEl.textContent = uvindex;
+  currentWeatherContainer.append(uvindexEl);
+};
 
 var getStateID = function () {
   var queryString = document.location.search;
@@ -272,6 +296,50 @@ var getStateCapital = function () {
       console.log(city);
     }
   }
+  console.log(city);
+  var stateCapital = city;
+  console.log(stateCapital);
+  //this right here below is not working//
+  var stateCapitalEl = document.queryCommandValue("#thisStateCapitol");
+  stateCapitalEl.textContent = stateCapital;
+
+  function getWeatherData(event) {
+    var query =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      stateCapital +
+      "&appid=" +
+      weatherApiKey;
+    fetch(query)
+      .then(function (res) {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then(function (data) {
+        console.log(data);
+        var lat = data.coord.lat;
+        var lon = data.coord.lon;
+        var apiUrl =
+          "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+          lat +
+          "&lon=" +
+          lon +
+          "&exclude=hourly,minutely&appid=" +
+          weatherApiKey;
+
+        fetch(apiUrl)
+          .then(function (res) {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then(function (data) {
+            console.log("palabra", data);
+            renderWeatherData(data);
+          });
+      });
+  }
+  getWeatherData();
 };
 
 var displayStateDataCovid = function (
@@ -280,8 +348,7 @@ var displayStateDataCovid = function (
   vaccine,
   population,
   transmissionLevel,
-  ICU_bed,
-  capital
+  ICU_bed
 ) {
   //pass in whatever we want to be display
   //display the data by appending it
@@ -292,7 +359,6 @@ var displayStateDataCovid = function (
     "Percent of population vaccinated",
     "CDC Tranmission Level",
     "ICU bed",
-    "capital",
   ];
   var arrData = [
     population,
@@ -301,7 +367,6 @@ var displayStateDataCovid = function (
     vaccine * 100,
     transmissionLevel,
     ICU_bed,
-    capital,
   ];
   var covidEl = document.querySelector("#covid-container");
   for (var i = 0; i < arrName.length; i++) {
@@ -310,30 +375,6 @@ var displayStateDataCovid = function (
     pEl.classList.add("has-text-left");
     covidEl.appendChild(pEl);
   }
-};
-
-var renderWeatherData = function (data) {
-  var current = data.current;
-  var temperature = current.temp;
-  var humidity = current.humidity;
-  var windspeed = current.wind_speed;
-  var uvindex = current.uvi;
-
-  var temperatureEl = document.createElement("p");
-  temperatureEl.textContent = temperature;
-  currentWeatherContainer.append(temperatureEl);
-
-  var humidityEl = document.createElement("p");
-  humidityEl.textContent = humidity;
-  currentWeatherContainer.append(humidityEl);
-
-  var windspeedEl = document.createElement("p");
-  windspeedEl.textContent = windspeed;
-  currentWeatherContainer.append(windspeedEl);
-
-  var uvindexEl = document.createElement("p");
-  uvindexEl.textContent = uvindex;
-  currentWeatherContainer.append(uvindexEl);
 };
 
 // var displayWeatherData = function (
@@ -372,45 +413,10 @@ var renderWeatherData = function (data) {
 //   }
 // };
 
-var getCityWeather = function (state, lat, lon) {
-  var apiUrl =
-    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
-    lat +
-    "&lon=" +
-    lon +
-    "&units=imperial&appid=9698d78e4b0b91d10c1cae15ee7197eb";
-
-  var response = fetch(apiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        console.log(data);
-      });
-    }
-  });
-};
-
-//pass in state from the front page
-// var getWeatherInfo = function (state) {
-//   var city = "Austin";
-//   var apiUrl =
-//     "https://api.openweathermap.org/data/2.5/weather?q=" +
-//     city +
-//     "&appid=9698d78e4b0b91d10c1cae15ee7197eb";
-
-//   var response = fetch(apiUrl).then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {});
-//       console.log(data);
-//     } else {
-//       console.log("error: please enter a valid city name");
-//     }
-//   });
-// };
-
 function getWeatherData(event) {
   var query =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
+    stateCapital +
     "&appid=" +
     weatherApiKey;
   fetch(query)
@@ -496,5 +502,5 @@ var getCovidInfo = function () {
 
 //start function
 getCovidInfo();
-// getWeatherInfo();
+// getWeatherInfo function is actually getStateCapitol in order to bypass local to global issue;
 getStateCapital();
