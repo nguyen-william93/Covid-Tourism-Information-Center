@@ -250,6 +250,7 @@ var stateID = [
 var weatherApiKey = "a1cef5ec8d14ee25ac975bd19e5efc49";
 var currentWeatherContainer = document.getElementById("weather-container");
 var stateCapitalContainer = document.querySelector("#thisStateCapital");
+
 var renderWeatherData = function (data) {
   var current = data.current;
   var temperature = current.temp;
