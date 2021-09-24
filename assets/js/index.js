@@ -1,7 +1,6 @@
 var wordStates = document.querySelectorAll(".list-of-states li");
 var svgStates = document.querySelectorAll("#states > *");
 var userInputEl = document.getElementById("state-input");
-var valueUserInputEl = userInputEl.value;
 var submitButtonEl = document.querySelector("#button");
 var modalBg = document.querySelector(".modal-background");
 var modal = document.querySelector(".modal");
@@ -264,7 +263,7 @@ function enableModal() {
 
 function inputCheck(event) {
   event.preventDefault();
-  console.log(userInputEl.value);
+
   if (!userInputEl.value) {
     enableModal();
 
@@ -275,10 +274,12 @@ function inputCheck(event) {
         saveData(userInputEl.value);
         window.location.href =
           "./state.html?state=" + userInputEl.value.toUpperCase();
+        return;
       } else if (userInputEl.value.toUpperCase() === stateID[i].ID) {
         saveData(userInputEl.value);
         window.location.href =
           "./state.html?state=" + userInputEl.value.toUpperCase();
+        return;
       }
     }
   }
@@ -343,7 +344,6 @@ svgStates.forEach(function (el) {
   });
 
   el.addEventListener("click", function () {
-    console.log(el.getAttribute);
     var ID = el.getAttribute("id");
     window.location.href = "./state.html?state=" + ID;
     saveData(el.getAttribute("id"));
@@ -355,15 +355,23 @@ var createBtn = function (state) {
   var buttonEl = document.createElement("button");
   buttonEl.textContent = state;
   buttonEl.classList.add("is-size-4");
+  buttonEl.setAttribute("id", "submit");
 
   var searchContainerEl = document.querySelector("#search-container");
-  buttonEl.setAttribute("id", "submit");
   searchContainerEl.appendChild(buttonEl);
 };
 
 var saveData = function (state) {
   var stateSearch = JSON.parse(localStorage.getItem("stateSearch")) || [];
   var stateUpper = state.toUpperCase();
+
+  if (stateUpper.length > 2){
+    for (var i = 0; i < stateID.length; i++){
+      if (stateUpper === stateID[i].name){
+        stateUpper = stateID[i].ID;
+      }
+    }
+  }
 
   if (stateSearch === 0) {
     stateSearch.push(stateUpper);
@@ -381,7 +389,6 @@ var loadData = function () {
 
   $.each(state, function (list, item) {
     createBtn(item);
-    //console.log(item);
   });
 };
 
@@ -389,7 +396,6 @@ var loadData = function () {
 $("#search-container").on("click", "#submit", function (event) {
   //redirect to the next page and pass in the value of the button
   var state = this.textContent;
-  console.log(state);
 
   window.location.href = "./state.html?state=" + state;
 });

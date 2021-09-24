@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link to bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel ="stylesheet" href = "./assets/css/style.css">
     <title>State Information</title>
   </head>
   <body>
@@ -24,22 +25,24 @@
           </h1>
       </header>
 
-      <main> 
+      <main id = "wrapper"> 
           <div class="columns">
               <div class="column mx-6 has-text-centered has-text-weight-bold is-size-4" id="covid-container">
                 COVID Data for State of <span id = "state-name"></span>
               </div>
               <div class="column mx-6 has-text-centered has-text-weight-bold is-size-4" id="weather-container ">
-                 Weather Data for the Capital of <span id = "state-name"></span>
+                 Weather Data for the Capital of <span id = "stateHasCapital"></span>
               </div>
           </div>
           <!--dynamically generated elements-->
           <!--want container with 2 columns, column 1 COVID, column 2 Weather for capital city-->
       </main>
      
-      <footer class = "hero is-danger">
-        <!--footer is optional-->
-        <p class= "subtitle m-4 has-text-centered"><a href = "index.html">Return to Homepage to View Map</p>
+      <footer class = "footer hero is-danger">
+        <div class = "hero is-danger">
+          <!--footer is optional-->
+          <p class= "subtitle m-4 has-text-centered"><a href = "index.html">Return to Homepage to View Map</p>
+        </div>
       </footer>
       <script src = "./assets/js/state.js"></script>
     
