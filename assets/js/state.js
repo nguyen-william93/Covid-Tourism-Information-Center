@@ -249,30 +249,40 @@ var stateID = [
 
 var weatherApiKey = "a1cef5ec8d14ee25ac975bd19e5efc49";
 var currentWeatherContainer = document.getElementById("weather-container");
-var stateCapitalContainer = document.querySelector("#thisStateCapital");
+var stateCapitalContainer = document.getElementById("thisStateCapital");
+var temperatureContainer = document.getElementById("temperature");
+var humidityContainer = document.getElementById("humidity");
+var windSpeedContainer = document.getElementById("windSpeed");
+var uviContainer = document.getElementById("uvi");
+var feelsLikeContainer = document.getElementById("feelsLike");
 
 var renderWeatherData = function (data) {
   var current = data.current;
-  var temperature = current.temp;
-  var humidity = current.humidity;
-  var windspeed = current.wind_speed;
-  var uvindex = current.uvi;
+  var temperature = "Temperature: " + current.temp + " °F";
+  var humidity = "Humidity: " + current.humidity + " %";
+  var windspeed = "Wind Speed: " + current.wind_speed + " MPH";
+  var uvindex = "UV Index: " + current.uvi;
+  var feelsLike = "Feels like: " + current.feels_like + " °F";
 
   var temperatureEl = document.createElement("p");
   temperatureEl.textContent = temperature;
-  currentWeatherContainer.append(temperatureEl);
+  temperatureContainer.append(temperatureEl);
 
   var humidityEl = document.createElement("p");
   humidityEl.textContent = humidity;
-  currentWeatherContainer.append(humidityEl);
+  humidityContainer.append(humidityEl);
 
   var windspeedEl = document.createElement("p");
   windspeedEl.textContent = windspeed;
-  currentWeatherContainer.append(windspeedEl);
+  windSpeedContainer.append(windspeedEl);
 
   var uvindexEl = document.createElement("p");
   uvindexEl.textContent = uvindex;
-  currentWeatherContainer.append(uvindexEl);
+  uviContainer.append(uvindexEl);
+
+  var feelsLikeEl = document.createElement("p");
+  feelsLikeEl.textContent = feelsLike;
+  feelsLikeContainer.append(feelsLikeEl);
 };
 
 var getStateID = function () {
@@ -301,8 +311,10 @@ var getStateCapital = function () {
   var stateCapital = city;
   console.log(stateCapital);
   //this right here below is not working//
-  var stateCapitalEl = document.queryCommandValue("#thisStateCapitol");
-  stateCapitalEl.textContent = stateCapital;
+
+  var stateCapitalEl = document.createElement("p");
+  stateCapitalEl.textContent = "State Capital: " + stateCapital;
+  stateCapitalContainer.append(stateCapitalEl);
 
   function getWeatherData(event) {
     var query =
@@ -325,7 +337,7 @@ var getStateCapital = function () {
           lat +
           "&lon=" +
           lon +
-          "&exclude=hourly,minutely&appid=" +
+          "&exclude=hourly,minutely&units=imperial&appid=" +
           weatherApiKey;
 
         fetch(apiUrl)
@@ -335,7 +347,7 @@ var getStateCapital = function () {
             }
           })
           .then(function (data) {
-            console.log("palabra", data);
+            console.log("weather return", data);
             renderWeatherData(data);
           });
       });
